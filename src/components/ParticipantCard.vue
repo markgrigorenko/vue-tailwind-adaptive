@@ -6,12 +6,12 @@
       class="md:w-[320px] md:h-[320px] w-[244px] h-[244px] left-[37px] rounded-[195.56px]"
     />
     <div
-      class="w-[286px] h-[29px] font-golos text-[24px] font-semibold leading-[28.8px] mt-[28px] text-center"
+      class="h-[29px] font-golos text-[24px] font-semibold leading-[28.8px] mt-[28px] text-center"
     >
       {{ name }}
     </div>
     <div
-      class="mt-[6px] h-[24px] opacity-[0.6] font-golos text-[20px] font-normal leading-[24px] text-left"
+      class="mt-[6px] h-[24px] opacity-[0.6] font-golos text-[18px] md:text-[20px] font-normal leading-[24px] text-left"
     >
       {{ description }}
     </div>

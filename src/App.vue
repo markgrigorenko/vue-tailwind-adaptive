@@ -7,22 +7,22 @@
     <div
       class="mx-[100px] mt-[100px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
-      <a href="#title"> Главная </a>
+      <a href="#title" @click="isOpened = !isOpened"> Главная </a>
     </div>
     <div
       class="mx-[100px] mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
-      <a href="#info"> Сводка о событии </a>
+      <a href="#info" @click="isOpened = !isOpened"> Сводка о событии </a>
     </div>
     <div
       class="mx-[100px] mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
-      <a href="#stages"> Этапы </a>
+      <a href="#stages" @click="isOpened = !isOpened"> Этапы </a>
     </div>
     <div
       class="mx-[100px] mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
-      <a href="#participants"> Участники </a>
+      <a href="#participants" @click="isOpened = !isOpened"> Участники </a>
     </div>
 
     <ParticipantsView />
