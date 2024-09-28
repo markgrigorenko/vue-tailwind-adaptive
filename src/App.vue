@@ -5,22 +5,22 @@
     class="w-[400px] flex justify-center flex-col items-center"
   >
     <div
-      class="mx-[100px] mt-[100px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
+      class="mx-[100px] scroll-link mt-[100px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
       <a href="#title" @click="isOpened = !isOpened"> Главная </a>
     </div>
     <div
-      class="mx-[100px] mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
+      class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
       <a href="#info" @click="isOpened = !isOpened"> Сводка о событии </a>
     </div>
     <div
-      class="mx-[100px] mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
+      class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
       <a href="#stages" @click="isOpened = !isOpened"> Этапы </a>
     </div>
     <div
-      class="mx-[100px] mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
+      class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
       <a href="#participants" @click="isOpened = !isOpened"> Участники </a>
     </div>
@@ -354,6 +354,20 @@ import Marquee from '@/components/Marquee.vue'
 import ImageSlider from '@/components/ImageSlider.vue'
 import { VueSidePanel } from 'vue3-side-panel'
 import ParticipantsView from '@/components/ParticipantsView.vue'
+
+document.querySelectorAll('.scroll-link').forEach((link) => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault() // Предотвращаем стандартное поведение ссылки
+    const targetId = this.getAttribute('href') // Получаем ID цели
+    const targetElement = document.querySelector(targetId) // Находим элемент по ID
+
+    // Плавная прокрутка
+    targetElement.scrollIntoView({
+      behavior: 'smooth', // Плавная прокрутка
+      block: 'start', // Прокрутка к началу элемента
+    })
+  })
+})
 
 export default {
   components: {
