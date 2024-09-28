@@ -19,22 +19,16 @@
         class="bg-white p-6 rounded-lg max-w-3xl w-full h-auto"
         :style="{ maxHeight: '75vh' }"
       >
-        <!-- Заголовок попапа -->
-        <h2 class="text-xl font-bold mb-4">Список претендентов</h2>
-
-        <!-- Кнопка закрытия попапа -->
-        <button
-          @click="closePopup"
-          class="bg-red-500 text-white py-1 px-2 rounded-md text-sm float-right mb-4"
+        <div
+          class="flex flex-row justify-between items-center text-center mb-4"
         >
-          Закрыть
-        </button>
+          <h2 class="text-xl font-bold">Список претендентов</h2>
+          <button @click="closePopup" class="">✖</button>
+        </div>
 
         <Loader v-if="loading" />
 
-        <!-- Основной контейнер для пользователей и фотографий -->
         <div v-else class="grid grid-cols-1 xl:grid-cols-2 gap-6">
-          <!-- Секция с карточками пользователей -->
           <div class="overflow-y-auto max-h-[65vh]">
             <UserCard
               v-for="user in paginatedUsers"
@@ -43,7 +37,6 @@
               @show-photos="handleUserPhotos"
             />
 
-            <!-- Пагинация карточек пользователей -->
             <Pagination
               :current-page="currentPage"
               :total-pages="totalPages"
