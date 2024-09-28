@@ -3,8 +3,8 @@
     <!-- Кнопка для открытия попапа -->
     <div>
       <button
-          class="mx-[100px] mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
-          @click="openPopup"
+        class="mx-[100px] mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
+        @click="openPopup"
       >
         Открыть список претендентов
       </button>
@@ -12,20 +12,20 @@
 
     <!-- Попап -->
     <div
-        v-if="isPopupOpen"
-        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      v-if="isPopupOpen"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
     >
       <div
-          class="bg-white p-6 rounded-lg max-w-3xl w-full h-auto"
-          :style="{ maxHeight: '75vh' }"
+        class="bg-white p-6 rounded-lg max-w-3xl w-full h-auto"
+        :style="{ maxHeight: '75vh' }"
       >
         <!-- Заголовок попапа -->
         <h2 class="text-xl font-bold mb-4">Список претендентов</h2>
 
         <!-- Кнопка закрытия попапа -->
         <button
-            @click="closePopup"
-            class="bg-red-500 text-white py-1 px-2 rounded-md text-sm float-right mb-4"
+          @click="closePopup"
+          class="bg-red-500 text-white py-1 px-2 rounded-md text-sm float-right mb-4"
         >
           Закрыть
         </button>
@@ -37,29 +37,31 @@
           <!-- Секция с карточками пользователей -->
           <div class="overflow-y-auto max-h-[65vh]">
             <UserCard
-                v-for="user in paginatedUsers"
-                :key="user.id"
-                :user="user"
-                @show-photos="handleUserPhotos"
+              v-for="user in paginatedUsers"
+              :key="user.id"
+              :user="user"
+              @show-photos="handleUserPhotos"
             />
 
             <!-- Пагинация карточек пользователей -->
             <Pagination
-                :current-page="currentPage"
-                :total-pages="totalPages"
-                @prev-page="prevPage"
-                @next-page="nextPage" > </Pagination>
+              :current-page="currentPage"
+              :total-pages="totalPages"
+              @prev-page="prevPage"
+              @next-page="nextPage"
+            >
+            </Pagination>
           </div>
 
           <!-- Секция с фотографиями для десктопа -->
           <PhotoSection
-              v-if="isPhotoPopupOpen"
-              :current-user-name="currentUserName"
-              :paginated-photos="paginatedPhotos"
-              :current-photo-page="currentPhotoPage"
-              :total-photo-pages="totalPhotoPages"
-              @prev-page="prevPhotoPage"
-              @next-page="nextPhotoPage"
+            v-if="isPhotoPopupOpen"
+            :current-user-name="currentUserName"
+            :paginated-photos="paginatedPhotos"
+            :current-photo-page="currentPhotoPage"
+            :total-photo-pages="totalPhotoPages"
+            @prev-page="prevPhotoPage"
+            @next-page="nextPhotoPage"
           />
         </div>
       </div>
@@ -67,14 +69,14 @@
 
     <!-- Попап для фотографий на мобильных устройствах -->
     <MobilePhotoPopup
-        v-if="isMobilePhotoPopupOpen"
-        :current-user-name="currentUserName"
-        :paginated-photos="paginatedPhotos"
-        :current-photo-page="currentPhotoPage"
-        :total-photo-pages="totalPhotoPages"
-        @close="closeMobilePhotoPopup"
-        @prev-page="prevPhotoPage"
-        @next-page="nextPhotoPage"
+      v-if="isMobilePhotoPopupOpen"
+      :current-user-name="currentUserName"
+      :paginated-photos="paginatedPhotos"
+      :current-photo-page="currentPhotoPage"
+      :total-photo-pages="totalPhotoPages"
+      @close="closeMobilePhotoPopup"
+      @prev-page="prevPhotoPage"
+      @next-page="nextPhotoPage"
     />
   </div>
 </template>
@@ -88,7 +90,7 @@ import PhotoSection from '@/components/PhotoSection.vue'
 import MobilePhotoPopup from '@/components/MobilePhotoPopup.vue'
 
 export default {
-  components: {MobilePhotoPopup, Loader, UserCard, PhotoSection, Pagination},
+  components: { MobilePhotoPopup, Loader, UserCard, PhotoSection, Pagination },
   data() {
     return {
       users: [],
@@ -116,7 +118,11 @@ export default {
       return Math.ceil(this.photos.length / this.photosPerPage)
     },
     paginatedPhotos() {
-      return this.paginate(this.photos, this.currentPhotoPage, this.photosPerPage)
+      return this.paginate(
+        this.photos,
+        this.currentPhotoPage,
+        this.photosPerPage
+      )
     },
   },
   methods: {

@@ -6,19 +6,19 @@
 
     <div class="grid grid-cols-3 gap-2">
       <div
-          v-for="photo in paginatedPhotos"
-          :key="photo.id"
-          class="border rounded-md overflow-hidden"
+        v-for="photo in paginatedPhotos"
+        :key="photo.id"
+        class="border rounded-md overflow-hidden"
       >
         <img :src="photo.url" :alt="photo.title" class="w-full h-auto" />
       </div>
     </div>
 
     <Pagination
-        :current-page="currentPhotoPage"
-        :total-pages="totalPhotoPages"
-        @prev-page="prevPage"
-        @next-page="nextPage"
+      :current-page="currentPhotoPage"
+      :total-pages="totalPhotoPages"
+      @prev-page="prevPage"
+      @next-page="nextPage"
     />
   </div>
 </template>

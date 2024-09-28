@@ -111,7 +111,6 @@
     id="info"
     class="w-full bg-white xl:h-screen h-auto relative bg-cover bg-center flex items-center justify-center flex-col xl:justify-center"
   >
-
     <div
       class="xl:pt-[50px] xl:px-[72px] xl:flex flex-row justify-between items-center hidden xl:w-full"
     >
