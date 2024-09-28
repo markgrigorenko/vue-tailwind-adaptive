@@ -7,22 +7,22 @@
     <div
       class="mx-[100px] scroll-link mt-[100px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
-      <a href="#title" @click="isOpened = !isOpened"> Главная </a>
+      <a href="#titleCustom" > Главная </a>
     </div>
     <div
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
-      <a href="#info" @click="isOpened = !isOpened"> Сводка о событии </a>
+      <a href="#infoCustom" > Сводка о событии </a>
     </div>
     <div
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
-      <a href="#stages" @click="isOpened = !isOpened"> Этапы </a>
+      <a href="#stagesCustom" > Этапы </a>
     </div>
     <div
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
-      <a href="#participants" @click="isOpened = !isOpened"> Участники </a>
+      <a href="#participantsCustom" > Участники </a>
     </div>
 
     <ParticipantsView />
@@ -49,7 +49,7 @@
   </button>
 
   <div
-    id="title"
+    id="titleCustom"
     class="w-full xl:bg-[url('background_title.png')] bg-[url('background_title_mobile.png')] pt-[100px] h-screen relative bg-cover bg-center flex flex-col items-center"
   >
     <img
@@ -108,7 +108,7 @@
   </div>
 
   <div
-    id="info"
+    id="infoCustom"
     class="w-full bg-white xl:h-screen h-auto relative bg-cover bg-center flex items-center justify-center flex-col xl:justify-center"
   >
     <div
@@ -223,7 +223,7 @@
     </div>
   </div>
 
-  <div id="stages" class="bg-white">
+  <div id="stagesCustom" class="bg-white">
     <div
       class="w-full bg-white h-screen relative bg-cover bg-center xl:block hidden"
     >
@@ -255,7 +255,7 @@
   </div>
 
   <div
-    id="participants"
+    id="participantsCustom"
     class="w-full bg-white h-auto xl:h-screen relative bg-cover bg-center"
   >
     <div
