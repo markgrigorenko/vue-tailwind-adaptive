@@ -1,6 +1,5 @@
 <template>
   <div class="relative w-full max-w-lg mx-auto">
-    <!-- Slider wrapper -->
     <div class="overflow-hidden">
       <div
         class="flex transition-transform duration-500 ease-in-out"

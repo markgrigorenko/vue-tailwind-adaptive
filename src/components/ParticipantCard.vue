@@ -1,24 +1,30 @@
 <template>
-  <div class="flex justify-center items-center flex-col w-[394px] h-[462px]">
+  <div class="flex justify-center items-center flex-col w-[394px] h-[475px]">
+    <!-- Аватар -->
     <img
-      src="@/assets/avatar.png"
-      alt="Avatar"
-      class="md:w-[320px] md:h-[320px] w-[244px] h-[244px] left-[37px] rounded-[195.56px]"
+        src="@/assets/avatar.png"
+        alt="Avatar"
+        class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover"
     />
-    <div
-      class="w-[286px] h-[29px] font-golos text-[24px] font-semibold leading-[28.8px] mt-[28px] text-center"
-    >
+
+    <!-- Имя -->
+    <div class="mt-7 text-2xl font-semibold text-center font-golos leading-7">
       {{ name }}
     </div>
-    <div
-      class="mt-[6px] h-[24px] opacity-[0.6] font-golos text-[20px] font-normal leading-[24px] text-left"
-    >
+
+    <!-- Описание -->
+    <div class="mt-1.5 text-lg opacity-60 text-center font-golos">
       {{ description }}
     </div>
-    <div
-      class="w-[113px] mt-[20px] h-[35px] p-[12px] flex justify-center items-center flex-col gap-[10px] font-golos rounded-[62px] border-[#3057A2] border-[1px]"
-    >
-      <a :href="link" class="text-center text-[#3057A2]">Подробнее</a>
+
+    <!-- Кнопка -->
+    <div class="mt-5">
+      <a
+          :href="link"
+          class="block px-5 py-2 text-center text-[#3057A2] font-golos border border-[#3057A2] rounded-full transition hover:bg-[#3057A2] hover:text-white"
+      >
+        Подробнее
+      </a>
     </div>
   </div>
 </template>
@@ -41,6 +47,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-</style>

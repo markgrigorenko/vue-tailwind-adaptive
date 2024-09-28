@@ -194,6 +194,8 @@
 </template>
 
 <script>
+import { fetchUsers, fetchUserPhotos } from '@/api/api'
+
 export default {
   data() {
     return {
@@ -233,7 +235,7 @@ export default {
     openPopup() {
       this.isPopupOpen = true
       this.loading = true // Начинаем загрузку
-      this.fetchUsers()
+      this.loadUsers()
     },
     closePopup() {
       this.isPopupOpen = false
@@ -260,13 +262,9 @@ export default {
         this.currentPhotoPage++
       }
     },
-    async fetchUsers() {
+    async loadUsers() {
       try {
-        const response = await fetch(
-          'https://jsonplaceholder.typicode.com/users'
-        )
-        const data = await response.json()
-        this.users = data
+        this.users = await fetchUsers()
       } catch (error) {
         console.error('Ошибка при загрузке пользователей:', error)
       } finally {
@@ -281,20 +279,16 @@ export default {
       if (window.innerWidth < 768) {
         this.isMobilePhotoPopupOpen = true
         this.currentPhotoPage = 1 // Сбрасываем страницу при новом пользователе
-        this.fetchUserPhotos()
+        this.loadUserPhotos()
       } else {
         this.isPhotoPopupOpen = true
-        this.fetchUserPhotos()
+        this.loadUserPhotos()
       }
     },
-    async fetchUserPhotos() {
+    async loadUserPhotos() {
       try {
         this.loading = true // Начинаем загрузку
-        const response = await fetch(
-          `https://jsonplaceholder.typicode.com/photos?albumId=${this.currentUserId}`
-        )
-        const data = await response.json()
-        this.photos = data
+        this.photos = await fetchUserPhotos(this.currentUserId)
       } catch (error) {
         console.error('Ошибка при загрузке фотографий:', error)
       } finally {
