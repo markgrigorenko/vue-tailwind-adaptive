@@ -10,13 +10,13 @@
         <button @click="$emit('close')" class="">✖</button>
       </div>
 
-      <div class="grid grid-cols-2 gap-2">
+      <div class="grid grid-cols-3 gap-2">
         <div
           v-for="photo in paginatedPhotos"
           :key="photo.id"
-          class="border rounded-md overflow-hidden"
+          class="border rounded-md overflow-hidden w-[100px] h-[100px]"
         >
-          <img :src="photo.url" :alt="photo.title" class="w-full h-auto" />
+          <img :src="photo.url" :alt="photo.title" class="w-auto h-[100px]" />
         </div>
       </div>
 
