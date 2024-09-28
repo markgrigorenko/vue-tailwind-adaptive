@@ -6,23 +6,27 @@
   >
     <div
       class="mx-[100px] scroll-link mt-[100px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
+      @click="scrollToSection('title')"
     >
-      <a href="#titleCustom" > Главная </a>
+      Главная
     </div>
     <div
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
+      @click="scrollToSection('info')"
     >
-      <a href="#infoCustom" > Сводка о событии </a>
+      Сводка о событии
     </div>
     <div
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
+      @click="scrollToSection('stages')"
     >
-      <a href="#stagesCustom" > Этапы </a>
+      Этапы
     </div>
     <div
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
+      @click="scrollToSection('participants')"
     >
-      <a href="#participantsCustom" > Участники </a>
+      Участники
     </div>
 
     <ParticipantsView />
@@ -48,8 +52,8 @@
     </svg>
   </button>
 
-  <div
-    id="titleCustom"
+  <section
+    id="title"
     class="w-full xl:bg-[url('background_title.png')] bg-[url('background_title_mobile.png')] pt-[100px] h-screen relative bg-cover bg-center flex flex-col items-center"
   >
     <img
@@ -105,10 +109,10 @@
     </div>
 
     <Marquee :messages="marqueeMessages" />
-  </div>
+  </section>
 
-  <div
-    id="infoCustom"
+  <section
+    id="info"
     class="w-full bg-white xl:h-screen h-auto relative bg-cover bg-center flex items-center justify-center flex-col xl:justify-center"
   >
     <div
@@ -221,9 +225,9 @@
     >
       Будущие источники обогащения васюкинцев
     </div>
-  </div>
+  </section>
 
-  <div id="stagesCustom" class="bg-white">
+  <section id="stages" class="bg-white">
     <div
       class="w-full bg-white h-screen relative bg-cover bg-center xl:block hidden"
     >
@@ -252,10 +256,10 @@
       />
     </div>
     <ImageSlider class="xl:hidden bg-white pt-[15px]"> </ImageSlider>
-  </div>
+  </section>
 
-  <div
-    id="participantsCustom"
+  <section
+    id="participants"
     class="w-full bg-white h-auto xl:h-screen relative bg-cover bg-center"
   >
     <div
@@ -333,7 +337,7 @@
     </div>
 
     <Marquee class="mt-100px" :messages="marqueeMessages" />
-  </div>
+  </section>
 
   <div
     class="w-full h-[214px] xl:h-[150px] relative bg-cover bg-center bg-[#E9DED4] flex items-center justify-center"
@@ -432,6 +436,13 @@ export default {
     },
   },
   methods: {
+    scrollToSection(sectionId) {
+      this.isOpened = !this.isOpened
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    },
     nextParticipant() {
       this.currentIndex = (this.currentIndex + 1) % this.participants.length
     },
