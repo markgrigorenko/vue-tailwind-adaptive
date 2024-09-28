@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between mt-4">
+  <div class="flex justify-between mt-4 items-center">
     <button
       @click="$emit('prev-page')"
       :disabled="currentPage === 1"
