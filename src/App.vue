@@ -112,7 +112,6 @@
   </section>
 
   <section
-    id="info"
     class="w-full bg-white xl:h-screen h-auto relative bg-cover bg-center flex items-center justify-center flex-col xl:justify-center"
   >
     <div
@@ -121,7 +120,7 @@
       <div
         class="uppercase text-[60px] xl:text-[36px] w-[764px] h-[196px] text-[#313131] text-4xl font-normal leading-[48.6px] text-left items-center"
       >
-        <div class="text-left">
+        <div id="info" class="text-left">
           Чтобы поддержать Международный васюкинский турнир посетите лекцию
           на тему:
         </div>
@@ -137,6 +136,7 @@
     </div>
 
     <div
+      id="info"
       class="text-[28px] md:mt-[220px] mt-[48px] mx-[20px] font-normal uppercase leading-[37.8px] text-left w-[335px] h-[152px] xl:hidden"
     >
       Чтобы поддержать <br />
@@ -215,6 +215,7 @@
     </div>
 
     <div
+      id="stages"
       class="w-[335px] uppercase h-[120px] mt-[120px] text-[36px] font-normal xl:hidden leading-[39.6px] text-left"
     >
       Этапы преображения Васюков
@@ -227,12 +228,13 @@
     </div>
   </section>
 
-  <section id="stages" class="bg-white">
+  <section class="bg-white">
     <div
       class="w-full bg-white h-screen relative bg-cover bg-center xl:block hidden"
     >
       <div class="pt-[200px] mx-[72px] flex justify-between flex-col">
         <p
+          id="stages"
           class="uppercase text-[54px] font-normal leading-[64.8px] text-left w-[806px] h-[65px]"
         >
           Этапы преображения
@@ -259,7 +261,6 @@
   </section>
 
   <section
-    id="participants"
     class="w-full bg-white h-auto xl:h-screen relative bg-cover bg-center"
   >
     <div
@@ -300,6 +301,7 @@
         class="flex justify-center items-center flex-row relative pt-[10px] md:pt-[70px]"
       >
         <ParticipantCard
+          id="participants"
           v-for="(participant, index) in visibleParticipants"
           :key="index"
           :name="participant.name"
