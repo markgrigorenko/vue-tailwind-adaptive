@@ -1,7 +1,6 @@
 <template>
   <VueSidePanel
     v-model="isOpened"
-    lock-scroll
     class="w-[400px] flex justify-center flex-col items-center"
   >
     <div
