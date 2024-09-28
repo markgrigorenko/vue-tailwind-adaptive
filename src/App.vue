@@ -5,13 +5,13 @@
     class="w-[400px] flex justify-center flex-col items-center"
   >
     <a
-      href="#home"
+      href="#title"
       class="mx-[100px] scroll-link mt-[100px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
       Главная
     </a>
     <a
-      href="#event-summary"
+      href="#info"
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
       Сводка о событии
