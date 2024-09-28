@@ -7,22 +7,22 @@
     <div
       class="mx-[100px] scroll-link mt-[100px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
-      <a href="#titleCustom" > Главная </a>
+      <a href="#titleCustom"> Главная </a>
     </div>
     <div
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
-      <a href="#infoCustom" > Сводка о событии </a>
+      <a href="#infoCustom"> Сводка о событии </a>
     </div>
     <div
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
-      <a href="#stagesCustom" > Этапы </a>
+      <a href="#stagesCustom"> Этапы </a>
     </div>
     <div
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
     >
-      <a href="#participantsCustom" > Участники </a>
+      <a href="#participantsCustom"> Участники </a>
     </div>
 
     <ParticipantsView />
@@ -108,7 +108,6 @@
   </div>
 
   <div
-    id="infoCustom"
     class="w-full bg-white xl:h-screen h-auto relative bg-cover bg-center flex items-center justify-center flex-col xl:justify-center"
   >
     <div
@@ -117,7 +116,7 @@
       <div
         class="uppercase text-[60px] xl:text-[36px] w-[764px] h-[196px] text-[#313131] text-4xl font-normal leading-[48.6px] text-left items-center"
       >
-        <div class="text-left">
+        <div id="info" class="text-left">
           Чтобы поддержать Международный васюкинский турнир посетите лекцию
           на тему:
         </div>
@@ -133,6 +132,7 @@
     </div>
 
     <div
+      id="info"
       class="text-[28px] md:mt-[220px] mt-[48px] mx-[20px] font-normal uppercase leading-[37.8px] text-left w-[335px] h-[152px] xl:hidden"
     >
       Чтобы поддержать <br />
@@ -211,6 +211,7 @@
     </div>
 
     <div
+      id="stages"
       class="w-[335px] uppercase h-[120px] mt-[120px] text-[36px] font-normal xl:hidden leading-[39.6px] text-left"
     >
       Этапы преображения Васюков
@@ -223,12 +224,13 @@
     </div>
   </div>
 
-  <div id="stagesCustom" class="bg-white">
+  <div class="bg-white">
     <div
       class="w-full bg-white h-screen relative bg-cover bg-center xl:block hidden"
     >
       <div class="pt-[200px] mx-[72px] flex justify-between flex-col">
         <p
+          id="stages"
           class="uppercase text-[54px] font-normal leading-[64.8px] text-left w-[806px] h-[65px]"
         >
           Этапы преображения
@@ -254,10 +256,7 @@
     <ImageSlider class="xl:hidden bg-white pt-[15px]"> </ImageSlider>
   </div>
 
-  <div
-    id="participantsCustom"
-    class="w-full bg-white h-auto xl:h-screen relative bg-cover bg-center"
-  >
+  <div class="w-full bg-white h-auto xl:h-screen relative bg-cover bg-center">
     <div
       class="pt-[160px] mx-[72px] flex justify-between items-center flex-row"
     >
@@ -296,6 +295,7 @@
         class="flex justify-center items-center flex-row relative pt-[10px] md:pt-[70px]"
       >
         <ParticipantCard
+          id="participants"
           v-for="(participant, index) in visibleParticipants"
           :key="index"
           :name="participant.name"
