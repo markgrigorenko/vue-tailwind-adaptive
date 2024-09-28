@@ -6,7 +6,6 @@
         alt="Avatar"
         class="w-60 h-60 md:w-80 md:h-80 rounded-full object-cover"
     />
-
     <!-- Имя -->
     <div class="mt-7 text-2xl font-semibold text-center font-golos leading-7">
       {{ name }}
@@ -14,9 +13,9 @@
 
     <!-- Описание -->
     <div class="mt-1.5 text-lg opacity-60 text-center font-golos">
+
       {{ description }}
     </div>
-
     <!-- Кнопка -->
     <div class="mt-5">
       <a
