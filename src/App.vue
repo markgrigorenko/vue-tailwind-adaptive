@@ -4,30 +4,30 @@
     lock-scroll
     class="w-[400px] flex justify-center flex-col items-center"
   >
-    <div
+    <a
+      href="#home"
       class="mx-[100px] scroll-link mt-[100px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
-      @click="scrollToSection('title')"
     >
       Главная
-    </div>
-    <div
+    </a>
+    <a
+      href="#event-summary"
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
-      @click="scrollToSection('info')"
     >
       Сводка о событии
-    </div>
-    <div
+    </a>
+    <a
+      href="#stages"
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
-      @click="scrollToSection('stages')"
     >
       Этапы
-    </div>
-    <div
+    </a>
+    <a
+      href="#participants"
       class="mx-[100px] scroll-link mt-[50px] font-golos uppercase text-2xl font-normal leading-[23.4px] text-left hover:text-[#B67C32] cursor-pointer"
-      @click="scrollToSection('participants')"
     >
       Участники
-    </div>
+    </a>
 
     <ParticipantsView />
   </VueSidePanel>
