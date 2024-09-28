@@ -13,6 +13,7 @@ module.exports = {
         marquee: 'marquee 15s linear infinite',
       },
       fontFamily: {
+        'serif': ['Merriweather', 'serif'],
         'golos': ['Golos Text', 'sans-serif'],
       },
     },
