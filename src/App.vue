@@ -1,6 +1,7 @@
 <template>
   <VueSidePanel
     v-model="isOpened"
+    :panel-duration="500"
     class="w-[400px] flex justify-center flex-col items-center"
   >
     <div
